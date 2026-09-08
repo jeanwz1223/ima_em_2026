@@ -1,0 +1,38 @@
+<!doctype html>
+  <html lang="en">
+    <head>
+    <meta name="description" content="Incantation Phase I: Visual Essay">
+    <meta name="author" content="Jean Wang">
+    </head>
+    <body>
+      <h1>Incantation Phase I: Visual Essay</h1>
+<style>
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+</style>
+
+<div class="gallery">
+  <img src="selected/1.JPG" alt="1">
+  <img src="selected/2.JPG" alt="2">
+  <img src="selected/3.JPG" alt="3">
+  <img src="selected/4.JPG" alt="4">
+  <img src="selected/5.JPG" alt="5">
+  <img src="selected/6.JPG" alt="6">
+  <img src="selected/7.JPG" alt="7">
+  <img src="selected/8.JPG" alt="8">
+  <img src="selected/9.JPG" alt="9">
+  <img src="selected/10.JPG" alt="10">
+  <img src="selected/11.JPG" alt="11">
+</div>
+      <h2>Project Abstract (three to five sentences)Project Description: Describe the proposed project. (500 words) Questions: Is it site specific? Who is the audience for your project? What visual metaphors do you intend to employ? Biography: write a one paragraph bio of yourself in the third person.</h2>
+    </body>
+  </html>
