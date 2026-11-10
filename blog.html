@@ -3,6 +3,32 @@
     <head>
     <meta name="description" content="EM 1 Blog Page">
     <meta name="author" content="Jean Wang">
+      <style>
+  html {
+    min-height: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+
+    background-image: url("paper_texture.jpg");
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: repeat-y;
+
+    filter: blur(2px);
+    transform: scale(1.02);
+  }
+</style>
     </head>
     <body>
       <h1>Emerging Media 1 Blog Page</h1>
