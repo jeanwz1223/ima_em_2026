@@ -35,28 +35,30 @@
       position: relative;
       width: 75%;
       margin: 0 auto;
-      /* 文本与白色色块边缘保持约 1cm (约 38px) 的距离 */
-      padding: 40px 38px;
+      /* 文本与色块边缘保持约 1cm (约 38px) 的距离 */
+      padding: 50px 38px;
       text-align: left;
     }
 
-    /* 白色棉花糖模糊衬底：范围是之前的三分之一，边缘模糊柔和 */
+    /* 具有实体感、刚好框住文本、边缘微微柔化的白底色块 */
     .content-wrapper::before {
       content: "";
       position: absolute;
       top: 0;
       bottom: 0;
-      left: 33%;
-      right: 33%;
-      background: rgba(255, 255, 255, 0.85);
-      filter: blur(40px);
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.92);
+      /* 减小模糊度，让它保留原本有棱角的色块本质，只在边缘轻轻晕开 */
+      filter: blur(8px);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
       z-index: -1;
       pointer-events: none;
     }
 
-    /* 大标题样式：设置为 h2 (20px) 的两倍，即 40px */
+    /* 大标题样式：是 h2 (24pt) 的两倍 */
     h1 {
-      font-size: 40px;
+      font-size: 48pt;
       text-align: center;
       margin-top: 40px;
     }
@@ -76,16 +78,16 @@
       display: block;
     }
 
-    /* H2 标题为 20px，正文为 14px（比原本大且清晰），1.5倍行距 */
+    /* 严格按要求：H2 为 24pt，正文为 18pt，1.5倍行距 */
     h2 {
-      font-size: 20px;
+      font-size: 24pt;
       line-height: 1.5;
       margin-top: 40px;
       margin-bottom: 20px;
     }
 
     p {
-      font-size: 14px;
+      font-size: 18pt;
       line-height: 1.5;
       margin-bottom: 20px;
     }
@@ -106,7 +108,7 @@
     <img src="img1/Aquarium Tank 2023.png" alt="Aquarium Tank 2023" />
   </div>
 
-  <!-- 从第一个标题开始套入棉花糖模糊白色衬底区域 -->
+  <!-- 从第一个标题开始套入精致柔化的白色衬底区域 -->
   <div class="content-wrapper">
     <h2>Reading Response Class 02-1</h2>
     <p>i think the relationship between digital technology and the poor image has really changed over time. Back in the day, digital tech was either the original images became poor in the first place, or it was just the vehicle that helped them spread. But now that tech has advanced, we’re seeing all these original, high-res works making a comeback on streaming platforms. Like some 90s anime. So as technology evolves, that dynamic keeps shifting. At the same time, a poor image on its own can still be a powerful medium for expressing real emotion and ideas. It can be a media of nostalgia or holding a strong destructive power towards certain narratives.</p>
