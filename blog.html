@@ -1,6 +1,6 @@
 <!doctype html>
-  <html lang="en">
-    <head>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="description" content="EM 1 Blog Page">
   <meta name="author" content="Jean Wang">
@@ -15,7 +15,78 @@
       font-weight: 400;
       font-style: normal;
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      text-align: center; /* 整体居中 */
+    }
+
+    /* 背景纸张纹理 */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background: url("paper_texture.jpg") center top / 100% auto repeat-y;
+      filter: blur(2px);
+      transform: scale(1.02);
+    }
+
+    /* 从第一个标题开始包裹的棉花糖模糊白色文本衬底容器 */
+    .content-wrapper {
+      position: relative;
+      width: 75%; /* 左右各留出 1/8 (12.5%) 的页面宽度，中间占 75% */
+      margin: 0 auto;
+      padding: 40px 0;
+      text-align: left; /* 内部文字保持左对齐或按需调整 */
+    }
+
+    /* 衬底本身：使用巨大的模糊白色块实现棉花糖一样的边缘效果 */
+    .content-wrapper::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -10vw;
+      right: -10vw;
+      background: rgba(255, 255, 255, 0.85);
+      filter: blur(40px); /* 制造边缘模糊的棉花糖质感 */
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* 大标题样式 */
+    h1 {
+      font-size: 24px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    /* 图片居中与大小控制（原显示效果的二分之一，四周留空） */
+    .image-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 16.66vh 0; /* 上下留出约 1/6 页面高度的空隙 */
+    }
+
+    .image-container img {
+      width: 50%; /* 缩放到原图大小的一半 */
+      height: auto;
+      display: block;
+    }
+
+    /* 正文与 H2 标题的具体字号、行距排版 */
+    h2 {
+      font-size: 18pt;
+      line-height: 1.5;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 12pt;
+      line-height: 1.5;
+      margin-bottom: 20px;
     }
 
     .sorts-mill-goudy-regular-italic {
@@ -23,59 +94,63 @@
       font-weight: 400;
       font-style: italic;
     }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      background: url("paper_texture.jpg") center top / 100% auto repeat-y;
-      filter: blur(2px);
-      transform: scale(1.02);
-    }
   </style>
 </head>
-    <body>
-      <h1>Emerging Media 1 Blog Page</h1>
-      <div>
-        <img src="img1/Aquarium Tank 2023.png" alt="Aquarium Tank 2023" />
-      </div>
-      <h2>Reading Response Class 02-1</h2>
-      <p>I think the relationship between digital technology and the poor image has really changed over time. Back in the day, digital tech was either the reason images became poor in the first place, or it was just the vehicle that helped them spread. But now that tech has advanced, we’re seeing all these original, high-res works making a comeback on streaming platforms. Like some 90s anime. So as technology evolves, that dynamic keeps shifting. 
-At the same time, a poor image on its own can still be a powerful medium for expressing real emotion and ideas. It can be a media of nostalgia or holding a strong destructive power towards certain narratives.</p>
-      <h2>Reading Response Class 02-2</h2>
-      <p>It’s kind of impossible to have a world so detached like Peach Blossom Spring, but it also happens everywhere. People could be really living in their own minds for their entire life. Some people call them “living in a bubble” which I disagree, because the life they live, what they see has always been their reality. Peach Blossom Spring in today’s world is like a liminal escape one will never get to find back. You enjoy it for a while, leave, come back for another hit but it just doesn’t feel the same. Just like the original story, since the society has been moving forward, people are aging, there is no place that’s going to stay just how good it is or always the way it is. If a place like Peach Blossom Spring truly exists, it must be built on so much of invisible labor (deliberately or passively), which could have a dark side to its nature, like Thailand, Bali or even Singapore.
-So far, New York definitely feels like a multi-verse to me, you can crack open another type of life whenever you’re ready. New York is like layers of cities piled up and packed together in one. People are living different lives and Peach Blossom Spring exists everywhere and also in everyone’s head. </p>
-      <h2>Reading Response Class 03 <i>(The Work of Art in the Age of Mechanical Reproduction)</i></h2>
-      <p>This article reminded me of a conversation I had with my mom where I was trying to explain to her why AI technology effects my work more in China than in the states. I’ve clearly seen people more against AI in the states than in China, in that a considerable amount of people in the states tend to think that AI generated art is “not beautiful”, people would comment down art posts saying “AI could never”. Because China is a country that to some extent strays from the capitalist aesthetic, which I think is part of what Benjamin coined as fascism’s “Aestheticization of Politics”. Art or aesthetic education that is fundamentally euro-centric is simply not a pushed forward by Chinese government, because of the communist or socialist atmosphere in China. Thus the “bottom-up” aesthetic created by AI generated art would not be so considered “not beautiful” because people lack of art education that teaches them what is beautiful and what is not. The discourse of beauty is still quite dominated by western society. Thus to some extent, AI creations are communist/socialist, against the top down aesthetics, as a challenge to the hierarchy of art. 
-Benjamin argues that mechanical reproduction “detaches the reproduced object from the domain of tradition.” I think AI-generated art is doing something similar, not only by challenging the traditional idea of what art should look like, but also by challenging who gets to create art in the first place. When people say “AI could never,” I wonder if they are actually defending the beauty of art, or the authority of those who have been educated to define beauty. Benjamin writes that “Communism responds by politicizing art,” which makes me think that AI could be political in the sense that it takes away some of the power from traditional artistic institutions and gives it to ordinary people. But at the same time, AI itself is still controlled by big tech companies. So maybe AI is not necessarily socialist, but it exposes the contradiction between making art accessible to everyone and keeping the means of artistic production in the hands of a few.</p>
-      <h2>Reading Response Class 04 <i>(As We May Think)</i></h2>
-      <p>Even though this essay dates back to 1945, it is still shockingly relevant today. Because the idea he put out in the essay constantly resonates with the logic of AI. AI connects information, associates information and give people more space for creative thinking.
-What attitude should we have towards AI is still very debatable, and the discussion would go on for years. But what we can not deny is that to some extent it is empowering us to build associations with information, “The prime action of use is selection”.
-So on my end this essay inspired me to think of two things. First, instead of figuring out what should we fight against in the age of AI (capitalism, misogyny, political forces), we can start off by retrieving power from the development of it. Fighting against or fighting for something seems like a grand objective, we could struggle to find a place to start. Where we can start is having technology help us “tie two items together” and avoid “repetitive thought”. The other thing is that as individuals, we have our own library of information. To organize and utilize our own information is also very important. Modern technology can be very distracting and harmful to our attention span and memory. So building our own memex for our own creative thoughts and knowledge that fuels our creation is also something we should really consider doing.</p>
-      <h2>Reading Response Class 05 <i>(The Society of the Spectacle)</i></h2>
-      <p>Despite that I once wrote a thesis paper on a successful Chinese film under the theoretical structure of the Spectacle, I still find it hard to understand everything Guy Debord is saying in his book. But there are some lines that click, like “it is the apparent domination of money which presents itself as an emissary armed with full powers which speaks in the name of an unknown force” from 41. 
-His decoding of capitalist society reminds me of the theory of simulacra by Baudrillard. While Debord emphasizes on what we’re experiencing, Baudrillard talks about the process of creating it and what we’re getting in the end. They all unpacked what’s encoded in the consumer society, that there are more and more meanings layered on top of our original experiences. They get thicker over time by copying and recreating.
-Going back to the quote I understand it in a way that the spectacle is strongly tied to the accumulation of capital, could be money, could be other values. It resonates how nowadays attention is where money is, while creating a spectacle is generating attention which attracts wealth. The Kardashians is a lively example.
-The thesis I wrote about was on how the director turned loosing weight into a spectacle that has multiple layers of meaning involved. She successfully invited millions of people come into the theatre to watch the process of her loosing weight, in and outside of the movie, did a successful transition from her comedian status to an actual director. It’s a successful business move in many aspects.
-In the end, I want to say if the Spectacle is constantly creating new needs for ‘privation’, I’m curious of what more we’re asked to do in the future. Since the copying and regeneration of simulacra is a continuous process, it’s going to be reaching its limit one day, by then we still call for the Spectacle, then what’s new we’re getting? What more needs, what new arts? Or do we tend to forget and have something similar to what’s existed in the past again but in different form, reinvented?</p>
-      <h2>Reading Response Class 06 <i>(Constituents of a Theory of the Media)</i></h2>
-      <p>This essay has educated me so much on the complex dynamic between modern technology and politics. It really forces me to step back and examine how technology is never politically neutral but always embedded in power structures. Enzensberger saw through the myth of “unmanipulated” media to the core of who holds the power and for whose benefit. His distinction between repressive and emancipatory media hits especially hard today. When you look at how digital networks and AI are deployed to enforce top-down surveillance, it’s clear that technology’s potential for two-way, decentralized interaction is still being actively suppressed to preserve the old split between producers and passive consumers. 
-Yet his point about systemic “leakiness” contradicts my personal experience. He is arguing that total central control is a mathematical impossibility in a complex network, and that real agency comes from making everyone a producer of their own narrative rather than just an end user. But I’ve only seen internet surveillance become more and more effective and severe in actions in China, with the development of algorithm and AI technology. It feels like modern AI and automated censorship have practically solved the scale problem Enzensberger thought was mathematically impossible, turning what should have been a decentralized network into an tight, top-down feedback loop. The algorithms have managed to automate the very “army of censors” he assumed would be too costly and inefficient to sustain. But nevertheless what gave me hope is that he also said “every attempt to suppress the random factors, each diminution of the average flow and each distortion of the information structure must, in the long run, lead to an embolism”.</p>
-      <h2>Reading Response Class 07 <i>(A Cyborg Manifesto)</i></h2>
-      <p>Haraway’s idea inspired me in terms of how the concept of Cyborg is a perfect example of breaking the traditional binary distinction between human and machine, creating a third concept of human and machine existence. Personally I think Cyborg might be the way out. Because outside of Yin and Yang to be looked at individually, the combined balance of Yin and Yang is what human is looking for, metaphorically and philosophically. When the ontological discussion went dry with subjects on polarities, the third space is where discussions can be fostered. 
-Haraway writes that “Irony is about contradictions that do not resolve into larger wholes, even dialectically,” which I found interesting because I think the purpose of a third space is not necessarily to resolve the contradiction, but to allow both sides to exist without having to choose one over the other. Yin and Yang are never completely independent from each other, and their existence is dependent on the other. I think Cyborg works in a similar way, human and machine always coexists and they do not stand on polarized ends. 
-The line “Our machines are disturbingly lively, and we ourselves frighteningly inert” is especially relevant today with AI, where we are constantly questioning whether machines are becoming more human or humans are becoming more machine-like. But why do we always have to define one through the other? Maybe the problem is not technology itself, but our obsession with categorizing everything into two opposing sides. The cyborg is “committed to partiality, irony, intimacy, and perversity.” This makes me wonder whether the third space should even be understood as a balance, because balance itself still suggests that two opposing forces need to eventually form a whole. Maybe Cyborg offers something beyond Yin and Yang, a way of existing where contradictions do not need to be balanced or resolved, but can simply coexist. And perhaps that is where a new understanding of humanity could begin.</p>
-      <h2>Reading Response Class 08 <i>(The Electronic Disturbance)</i></h2>
-      <p>With the development of AI I’m definitely seeing a lot of power shifting in modern classism. Modern world appears to be more chaotic and unstable than able, digital power becomes almost as striking as actual warcraft. I think the author contends that the modern ruling elites have completely unleashed themselves from physical geography. Instead of relying on fixed urban centers or traditional industrial factories they operate as a fluid force: “As the contemporary elite moves from centralized urban areas to decentralized and deterritorialized cyberspace ... How can a subject be critically assessed that cannot be located, examined, or even seen? Class analysis reaches a point of exhaustion.” Looking at how AI, big data, and automated algorithms are deployed today, we are trying to push back against all-encompassing systemic surveillance using localized protests, while the cyber-elite float invisibly in hyperreality. Every screen, app, and platform seem to be designed to pacify us through consumption, spectacle, and seamless digital control, and it gets more serious with the development of AI. Since the text intends to call on our equipment of digital resistance, I think the step we can take now is to know AI more. As what I’ve observed AI has been slowly colonizing the way we speaks and the way we react. We need to know what’s human and what’s AI first to master it instead of being destroyed culturally by it. I am never a fan of resisting things, but trying to play with it till it goes my way. It is a dangerous way of thinking because I’ll never know when we become one or when I fully become its slave. But to me learning about what’s making it thrive and what it is doing definitely help with controlling it. Since it doesn’t seem to go away any time soon. It is heartbreaking to see people online interacting with AI content through online AI tools. Nevertheless, this text supports me in a way that I do believe in fighting in the scene instead of opting out, because “The new geography is a virtual geography, and the core of political and cultural resistance must assert itself in this electronic space”.</p>
-      <h2>Reading Response Class 09 <i>(Hamlet on the Holodeck)</i></h2>
-      <p>I strongly agree with the author’s idea that the development of new technologies does not necessarily lead to the emergence of new media or art forms. When discussing modern media, I often find myself thinking about Baudrillard's theory of simulacra, where everything in the future seems to be a reproduction of something that has already existed in society. The future development of media might actually lie in what Haraway suggests: further breaking down the boundaries between humans and machines, as well as between the virtual world and the real world. It strikes me through reading when I realized technology itself does not create meaning. It is how humans understand and interact with technology that gives it the possibility of becoming art. After The Sims 4 EA never managed to put out The Sims 5. The technology we need is definitely there, but how we interact with it and what more do we want from the game remain questioned.
-I think in terms of digital media we are still in a transitional period where we tend to use new technologies to reproduce what already exists, rather than exploring what they could potentially become. But even so we gets frustrated with a handful of technologies sometimes.
-What I find even more interesting is the author’s discussion of the Game of Life, where complex patterns emerge from relatively simple rules. This reminds me of how human society operates, where individual actions collectively construct something much larger than themselves. Perhaps the potential of digital art is to allow us to experience how our freedom exists within certain structures. In this sense, digital media might not only become a new way of telling stories, but also a new way of understanding our own existence.</p>
-      <h2>Viewing Response Class 10 <i>(Lo and Behold, Reveries of the Connected World)</i></h2>
-      <p>Internet has always been a double edged sword without a conventional definition of whether it is good or bad. But still it is shocking to see people actually getting sick because of Internet radiation or its frequency. And some of them in the documentary clearly called the internet anti-christ. If someone were told there are people who get physically ill because of the way we’re connected, they must think that these people are neurotic. I think it is in the way we’re describing them. In the documentary, the score that’s used seems to make it appear serious. They consider themselves hypersensitive with the frequency which is a very neutral or even positive way to describe their neurodivergence. But they are just one way to look at the internet, and they can be easily pinned down as people who are ‘terrible’ with internet frequencies, which makes the rest of us normal people. Because me personally I tend to think something is bad if it does not align with how nature works. If the radiation or frequency of internet actually affects or physical health, then it is more of a negative thing than otherwise. But it’s just a thought.
-It is also very interesting to look at how internet connect us through the lens of molecules, water and the origin of the universe. It is actually fascinating to see how there are so many scopes and so many different narratives when just documenting a single subject. And they are all woven together perfectly.
-Another inspiring way to think of internet is how it is a shared language as discussed in the documentary. It is still connecting people in a neutral way even on a technical level, that we all to some extent speak the same language through its development. Scientists says the internet is “out of control”, but come to think of it would societal development be out of control if there wasn’t a Babel tower in the beginning? Is the internet trying to establish this shared literacy and are we doomed to be out of control or chaotic from the start? I believe that everything is a wave of chaos and the organized, everything booms first then comes into peace or a result later, and then the next turbulence.
-And there are many different languages spoken in the world of internet that I know, the one with only 1 and 0, and the ones that are with alphabet. The colonization through computer language is also something needs to be looked at. Because I believe in the Sapir-Whorf hypothesis, if a non English speaker started to learn and try to master the way how computer speaks with English words and alphabet, will they adopt the western way of thinking? How does it affect third-world country people in this field, when they’re trying to establish conversations with other scientists in the world?</p>
-    </body>
-  </html>
+<body>
+
+  <h1>Emerging Media 1 Blog Page</h1>
+
+  <!-- 图片部分：居中，四周有统一留白，尺寸为原图 1/2 -->
+  <div class="image-container">
+    <img src="img1/Aquarium Tank 2023.png" alt="Aquarium Tank 2023" />
+  </div>
+
+  <!-- 从第一个标题开始套入棉花糖模糊白色衬底区域 -->
+  <div class="content-wrapper">
+    <h2>Reading Response Class 02-1</h2>
+    <p>i think the relationship between digital technology and the poor image has really changed over time. Back in the day, digital tech was either the original images became poor in the first place, or it was just the vehicle that helped them spread. But now that tech has advanced, we’re seeing all these original, high-res works making a comeback on streaming platforms. Like some 90s anime. So as technology evolves, that dynamic keeps shifting. At the same time, a poor image on its own can still be a powerful medium for expressing real emotion and ideas. It can be a media of nostalgia or holding a strong destructive power towards certain narratives.</p>
+    
+    <h2>Reading Response Class 02-2</h2>
+    <p>It's kind of impossible to have a world so detached like Peach Blossom Spring, but it also happens everywhere. People could be really living in their own minds for their entire life. Some people call them "living in a bubble" which I disagree, because the life they live, what they see has always been their reality. Peach Blossom Spring in today's world is like a liminal escape one will never get to find back. You enjoy it for a while, leave, come back for another hit but it just doesn't feel the same. Just like the original story, since the society has been moving forward, people are aging, there is no place that's going to stay just how good it is or always the way it is. If a place like Peach Blossom Spring truly exists, it must be built on so much of invisible labor (deliberately or passively), which could have a dark side to its nature, like Thailand, Bali or even Singapore. So far, New York definitely feels like a multi-verse to me, you can crack open another type of life whenever you're ready. New York is like layers of cities piled up and packed together in one. People are living different lives and Peach Blossom Spring exists everywhere and also in everyone's head.</p>
+
+    <h2>Reading Response Class 03 <i>(The Work of Art in the Age of Mechanical Reproduction)</i></h2>
+    <p>This article reminded me of a conversation I had with my mom where I was trying to explain to her why AI technology effects my work more in China than in the states. I've clearly seen people more against AI in the states than in China, in that a considerable amount of people in the states tend to think that AI generated art is “not beautiful”, people would comment down art posts saying “AI could never”. Because China is a country that to some extent strays from the capitalist aesthetic, which I think is part of what Benjamin coined as fascism's “Aestheticization of Politics”. Art or aesthetic education that is fundamentally euro-centric is simply not a pushed forward by Chinese government, because of the communist or socialist atmosphere in China. Thus the “bottom-up” aesthetic created by AI generated art would not be so considered “not beautiful” because people lack of art education that teaches them what is beautiful and what is not. The discourse of beauty is still quite dominated by western society. Thus to some extent, AI creations are communist/socialist, against the top down aesthetics, as a challenge to the hierarchy of art.</p>
+    <p>Benjamin argues that mechanical reproduction “detaches the reproduced object from the domain of tradition.” I think AI-generated art is doing something similar, not only by challenging the traditional idea of what art should look like, but also by challenging who gets to create art in the first place. When people say “AI could never,” I wonder if they are actually defending the beauty of art, or the authority of those who have been educated to define beauty. Benjamin writes that “Communism responds by politicizing art,” which makes me think that AI could be political in the sense that it takes away some of the power from traditional artistic institutions and gives it to ordinary people. But at the same time, AI itself is still controlled by big tech companies. So maybe AI is not necessarily socialist, but it exposes the contradiction between making art accessible to everyone and keeping the means of artistic production in the hands of a few.</p>
+
+    <h2>Reading Response Class 04 <i>(As We May Think)</i></h2>
+    <p>Even though this essay dates back to 1945, it is still shockingly relevant today. Because the idea he put out in the essay constantly resonates with the logic of AI. AI connects information, associates information and give people more space for creative thinking. What attitude should we have towards AI is still very debatable, and the discussion would go on for years. But what we can not deny is that to some extent it is empowering us to build associations with information, “The prime action of use is selection”.</p>
+    <p>So on my end this essay inspired me to think of two things. First, instead of figuring out what should we fight against in the age of AI (capitalism, misogyny, political forces), we can start off by retrieving power from the development of it. Fighting against or fighting for something seems like a grand objective, we could struggle to find a place to start. Where we can start is having technology help us “tie two items together” and avoid “repetitive thought”. The other thing is that as individuals, we have our own library of information. To organize and utilize our own information is also very important. Modern technology can be very distracting and harmful to our attention span and memory. So building our own memex for our own creative thoughts and knowledge that fuels our creation is also something we should really consider doing.</p>
+
+    <h2>Reading Response Class 05 <i>(The Society of the Spectacle)</i></h2>
+    <p>Despite that I once wrote a thesis paper on a successful Chinese film under the theoretical structure of the Spectacle, I still find it hard to understand everything Guy Debord is saying in his book. But there are some lines that click, like “it is the apparent domination of money which presents itself as an emissary armed with full powers which speaks in the name of an unknown force” from 41.</p>
+    <p>His decoding of capitalist society reminds me of the theory of simulacra by Baudrillard. While Debord emphasizes on what we're experiencing, Baudrillard talks about the process of creating it and what we're getting in the end. They all unpacked what's encoded in the consumer society, that there are more and more meanings layered on top of our original experiences. They get thicker over time by copying and recreating.</p>
+    <p>Going back to the quote I understand it in a way that the spectacle is strongly tied to the accumulation of capital, could be money, could be other values. It resonates how nowadays attention is where money is, while creating a spectacle is generating attention which attracts wealth. The Kardashians is a lively example.</p>
+    <p>The thesis I wrote about was on how the director turned loosing weight into a spectacle that has multiple layers of meaning involved. She successfully invited millions of people come into the theatre to watch the process of her loosing weight, in and outside of the movie, did a successful transition from her comedian status to an actual director. It's a successful business move in many aspects.</p>
+    <p>In the end, I want to say if the Spectacle is constantly creating new needs for ‘privation’, I'm curious of what more we're asked to do in the future. Since the copying and regeneration of simulacra is a continuous process, it's going to be reaching its limit one day, by then we still call for the Spectacle, then what's new we're getting? What more needs, what new arts? Or do we tend to forget and have something similar to what's existed in the past again but in different form, reinvented?</p>
+
+    <h2>Reading Response Class 06 <i>(Constituents of a Theory of the Media)</i></h2>
+    <p>This essay has educated me so much on the complex dynamic between modern technology and politics. It really forces me to step back and examine how technology is never politically neutral but always embedded in power structures. Enzensberger saw through the myth of “unmanipulated” media to the core of who holds the power and for whose benefit. His distinction between repressive and emancipatory media hits especially hard today. When you look at how digital networks and AI are deployed to enforce top-down surveillance, it's clear that technology's potential for two-way, decentralized interaction is still being actively suppressed to preserve the old split between producers and passive consumers.</p>
+    <p>Yet his point about systemic “leakiness” contradicts my personal experience. He is arguing that total central control is a mathematical impossibility in a complex network, and that real agency comes from making everyone a producer of their own narrative rather than just an end user. But I've only seen internet surveillance become more and more effective and severe in actions in China, with the development of algorithm and AI technology. It feels like modern AI and automated censorship have practically solved the scale problem Enzensberger thought was mathematically impossible, turning what should have been a decentralized network into an tight, top-down feedback loop. The algorithms have managed to automate the very “army of censors” he assumed would be too costly and inefficient to sustain. But nevertheless what gave me hope is that he also said “every attempt to suppress the random factors, each diminution of the average flow and each distortion of the information structure must, in the long run, lead to an embolism”.</p>
+
+    <h2>Reading Response Class 07 <i>(A Cyborg Manifesto)</i></h2>
+    <p>Haraway's idea inspired me in terms of the concept of Cyborg is a perfect example of breaking the traditional binary distinction between human and machine, creating a third concept of human and machine existence. Personally I think Cyborg might be the way out. Because outside of Yin and Yang to be looked at individually, the combined balance of Yin and Yang is what human is looking for, metaphorically and philosophically. When the ontological discussion went dry with subjects on polarities, the third space is where discussions can be fostered.</p>
+    <p>Haraway writes that “Irony is about contradictions that do not resolve into larger wholes, even dialectically,” which found interesting because I think the purpose of a third space is not necessarily to resolve the contradiction, but to allow both sides to exist without having to choose one over the other. Yin and Yang are never completely independent from each other, and their existence is dependent on the other. I think Cyborg works in a similar way, human and machine always coexists and they do not stand on polarized ends.</p>
+    <p>The line “Our machines are disturbingly lively, and we ourselves frighteningly inert” is especially relevant today with AI, where we are constantly questioning whether machines are becoming more human or humans are becoming more machine-like. But why do we always have to define one through the other? Maybe the problem is not technology itself, but our obsession with categorizing everything into two opposing sides. The cyborg is “committed to partiality, irony, intimacy, and perversity.” This makes me wonder whether the third space should even be understood as a balance, because balance itself still suggests that two opposing forces need to eventually form a whole. Maybe Cyborg offers something beyond Yin and Yang, a way of existing where contradictions do not need to be balanced or resolved, but can simply coexist. And perhaps that is where a new understanding of humanity could begin.</p>
+
+    <h2>Reading Response Class 08 <i>(The Electronic Disturbance)</i></h2>
+    <p>With the development of AI I'm definitely seeing a lot of power shifting in modern classism. Modern world appears to be more chaotic and unstable than able, digital power becomes almost as striking as actual warcraft. I think the author contends that modern ruling elites have completely unleashed themselves from physical geography. Instead of relying on fixed urban centers or traditional industrial factories they operate as a fluid force: “As the contemporary elite moves from centralized urban areas to decentralized and deterritorialized cyberspace ... How can a subject be critically assessed that cannot be located, examined, or even seen? Class analysis reaches a point of exhaustion.” Looking at how AI, big data, and automated algorithms are deployed today, we are trying to push back against all-encompassing systemic surveillance using localized protests, while the cyber-elite float invisibly in hyperreality. Every screen, app, and platform seem to be designed to pacify us through consumption, spectacle, and seamless digital control, and it gets more serious with the development of AI. Since the text intends to call on our equipment of digital resistance, I think the step we can take now is to know AI more. As what I've observed has been slowly colonizing the way we speaks and the way we react. We need to know what's human and what's AI first to instead of being destroyed culturally by it. I am never a fan of resisting things, but trying to play with it till it goes my way. It is a dangerous way of thinking because I'll never know when we become one or when I fully become its slave. But to me learning about what's making it thrive and what it is doing definitely help with controlling it. Since it doesn't seem to go away any time soon. It is heartbreaking to see people interacting with AI content through online AI tools. Nevertheless, this text supports me in a way that I do believe in fighting in the scene instead of opting out, because “The new geography is a virtual geography, and the core of political and cultural resistance must assert itself in this electronic space”.</p>
+
+    <h2>Reading Response Class 09 <i>(Hamlet on the Holodeck)</i></h2>
+    <p>I strongly agree with the author's idea that the development of new technologies does not necessarily lead to the emergence of new media or art forms. When discussing media, I often find myself thinking about Baudrillard's theory of simulacra, where everything in the future seems to be a reproduction of something that has already existed in society. The future development of media might actually lie in what Haraway suggests: further breaking down the boundaries between humans and machines, as well as between the virtual world and the real world. It strikes me through reading when I realized technology itself does not create meaning. It is how humans understand and interact with technology that gives it the possibility of becoming art. After The Sims 4 EA never managed to put out The Sims 5. The technology we need is definitely there, but how we interact with it and what more do we want from the game remain questioned.</p>
+    <p>I think in terms of digital media we are still in a transitional period where we tend to use new technologies to reproduce what already exists, rather than exploring what they could potentially become. But even so we gets frustrated with a handful of technologies sometimes.</p>
+    <p>What I find even more interesting is the author's discussion of the Game of Life, where complex patterns emerge from relatively simple rules. This reminds me of how human society operates, where individual actions collectively construct something much larger than themselves. Perhaps the potential of digital art is to allow us to experience how our freedom exists within certain structures. In this sense, digital media might not only become a new way of telling stories, but also a new way of understanding our own existence.</p>
+
+    <h2>Viewing Response Class 10 <i>(Lo and Behold, Reveries of the Connected World)</i></h2>
+    <p>Internet has always been a double edged sword without a conventional definition of whether it is good or bad. But still it is shocking to see people actually getting sick because of Internet radiation or its frequency. And some of them in the documentary clearly called the internet anti-christ. If someone were told there are people who get physically ill because of the way we're connected, they must think that these people are neurotic. It is in the way we're describing them. In the documentary, the score that's used seems to make it appear serious. They consider themselves hypersensitive with the frequency which is a very neutral or even positive way to describe their neurodivergence. But they are just one way to look at the internet, and they can be easily pinned down as people who are ‘terrible’ with internet frequencies, which makes the rest of us normal people. Because me personally I tend to think something is bad if it does not align with how nature works. If the radiation or frequency of internet actually affects or physical health, it is more of a negative than otherwise. But it's just a thought.</p>
+    <p>It is also very interesting to look at how internet connect us through the lens of molecules, water and the origin of the universe. It is actually fascinating to see how there are many scopes and so many different narratives when just documenting a single subject. And they are all woven together perfectly.</p>
+    <p>Another inspiring way to think of internet is how it is a shared language as discussed in the documentary. It is still connecting people in a neutral way even on a technical level, that we all to some extent speak the same language through development. Scientists says the internet is “out of control”, but come to think of it would societal development be out of control if wasn't a Babel tower in the beginning? Is the internet trying to establish this shared literacy and are we doomed to be out of control or chaotic from the start? I believe that everything is a wave of chaos and the organized, everything booms first then comes into peace or a result later, and then the next turbulence.</p>
+    <p>And there are many different languages spoken in the world of internet that I know, the one with only 1 and 0, and the ones that are with alphabet. The colonization through computer language is also something needs to be looked at. Because I believe in the Sapir-Whorf hypothesis, if a non English speaker started to learn and try to master the way how computer speaks with English words and alphabet, will they adopt the western way of thinking? How does it affect third-world country people in this field, when they're trying to establish conversations with other scientists in the world?</p>
+  </div>
+
+</body>
+</html>
