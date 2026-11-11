@@ -16,7 +16,7 @@
       font-style: normal;
       margin: 0;
       padding: 0;
-      text-align: center; /* 整体居中 */
+      text-align: center;
     }
 
     /* 背景纸张纹理 */
@@ -30,61 +30,62 @@
       transform: scale(1.02);
     }
 
-    /* 从第一个标题开始包裹的棉花糖模糊白色文本衬底容器 */
+    /* 文本包裹容器（左右各 1/8 页面宽度，即占 75%） */
     .content-wrapper {
       position: relative;
-      width: 75%; /* 左右各留出 1/8 (12.5%) 的页面宽度，中间占 75% */
+      width: 75%;
       margin: 0 auto;
-      padding: 40px 0;
-      text-align: left; /* 内部文字保持左对齐或按需调整 */
+      /* 文本与白色色块边缘保持约 1cm (约 38px) 的距离 */
+      padding: 40px 38px;
+      text-align: left;
     }
 
-    /* 衬底本身：使用巨大的模糊白色块实现棉花糖一样的边缘效果 */
+    /* 白色棉花糖模糊衬底：范围是之前的三分之一，边缘模糊柔和 */
     .content-wrapper::before {
       content: "";
       position: absolute;
       top: 0;
       bottom: 0;
-      left: -10vw;
-      right: -10vw;
+      left: 33%;
+      right: 33%;
       background: rgba(255, 255, 255, 0.85);
-      filter: blur(40px); /* 制造边缘模糊的棉花糖质感 */
+      filter: blur(40px);
       z-index: -1;
       pointer-events: none;
     }
 
-    /* 大标题样式 */
+    /* 大标题样式：设置为 h2 (20px) 的两倍，即 40px */
     h1 {
-      font-size: 24px;
+      font-size: 40px;
       text-align: center;
       margin-top: 40px;
     }
 
-    /* 图片居中与大小控制（原显示效果的二分之一，四周留空） */
+    /* 图片居中与大小控制（原显示效果的二分之一） */
     .image-container {
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 16.66vh 0; /* 上下留出约 1/6 页面高度的空隙 */
+      margin: 16.66vh 0;
     }
 
     .image-container img {
-      width: 50%; /* 缩放到原图大小的一半 */
+      width: 50%;
       height: auto;
       display: block;
     }
 
-    /* 正文与 H2 标题的具体字号、行距排版 */
+    /* H2 标题为 20px，正文为 14px（比原本大且清晰），1.5倍行距 */
     h2 {
-      font-size: 18pt;
+      font-size: 20px;
       line-height: 1.5;
       margin-top: 40px;
       margin-bottom: 20px;
     }
 
     p {
-      font-size: 12pt;
+      font-size: 14px;
       line-height: 1.5;
       margin-bottom: 20px;
     }
@@ -100,7 +101,7 @@
 
   <h1>Emerging Media 1 Blog Page</h1>
 
-  <!-- 图片部分：居中，四周有统一留白，尺寸为原图 1/2 -->
+  <!-- 图片部分 -->
   <div class="image-container">
     <img src="img1/Aquarium Tank 2023.png" alt="Aquarium Tank 2023" />
   </div>
